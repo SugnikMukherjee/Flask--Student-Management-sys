@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Student Management System</title>
+    <!-- Custom styles for this template -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+    <link href="{{url_for('static',filename='cover.css')}}" rel="stylesheet">
+  </head>
+  {% endblock %}
+
+  {% block body %}
+  <body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Student Management Portal</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="{{url_for('home')}}">Home</a>
+            <a class="nav-link" href="{{url_for('about')}}">About</a>
+            <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Welcome to Student Management Site </h1>
+        <p class="lead">Following are the contacts of the students registered with us.For further updates look at the post page.Enrolling people should visit the Contact page</p>
+        <p class="lead">
+          <a href="{{url_for('posts')}}" class="btn btn-outline-danger">View Posts</a>
+        </p>
+      </main>
+
+
+
+      <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          Click to view 
+        </a>
+        <a href="{{url_for('logout')}}" class="btn btn-danger">Logout</a>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <table class="table table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                  </tr>
+                  {% for contact in contacts %}
+                  <tr>
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>{{contact.phone_num}}</td>
+                  </tr>
+                  {% endfor %}
+              </table>
+        </div>
+      </div>
+
+
+      
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>The institute <a href="#">Management Site</a>, by <a href="#">@mdo</a>.</p>
+        </div>
+      </footer>
+    </div>
+</body>
+{% endblock %}

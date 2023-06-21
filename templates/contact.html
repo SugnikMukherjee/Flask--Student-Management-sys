@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+{% block head %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Student Management System</title>
+    <!-- Custom styles for this template -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+    <link href="{{url_for('static',filename='cover.css')}}" rel="stylesheet">
+  </head>
+  {% endblock %}
+{% block css %}
+<style>
+    /*fieldset {margin:0;padding:10px ;border:solid 2px;}
+    .custom-tooltip {
+        --bs-tooltip-bg: var(--bs-primary);
+      }*/
+      main{
+        text-align:center;
+      }
+      main:after{
+        bottom-padding:5px;
+      }
+      main:before{
+        top-padding:5px;
+      }
+</style>
+{% endblock %}
+{% block body %}
+<div class="container">
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/contact">Contacts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/posts">Posts</a>
+          </li> 
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" id="searchbar"  onkeyup="search_animal()" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Welcome to Home Page </h1>
+    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+    <p class="lead">
+      <a href="{{url_for('posts')}}" class="btn btn-outline-danger">View Posts</a>
+    </p>
+  </main>
+
+<div class="container min-vh-90 d-flex justify-content-center align-items-center"> 
+<form action="/contact" method="post">
+    <fieldset>
+    <legend><b><u>Authentication Form</u></b></legend>
+    <div class="mb-3">
+      <label for="name" class="form-label" align="center"><b>Name</b></label>
+      <input type="text" class="form-control" id="name"  placeholder="Enter your Name" name="name">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label" align="center"><b>Email address</b></label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Email" name="email">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="phone2numeric" class="form-label"><b>Phone number</b></label>
+      <input type="phone2numeric" class="form-control" id="phone_num" placeholder="Enter your Phone number" name="phone_num">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Enter message</label>
+      <textarea class="form-control" id="message" name="message" rows="2"></textarea>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-danger">Submit</button>
+    <button type="reset" class="btn btn-secondary">Clear</button>
+</fieldset>
+</form>
+</div>
+
+</div>
+
+{% block script %}
+  <script>
+function search_animal() {
+	let input = document.getElementById('searchbar').value
+	input=input.toLowerCase();
+	let x = document.getElementsByClassName('mb-3');
+	
+	for (i = 0; i < x.length; i++) {
+		if (!x[i].innerHTML.toLowerCase().includes(input)) {
+			x[i].style.display="none";
+		}
+		else {
+			x[i].style.display="list-item";				
+		}
+	}
+}
+</script>
+  {% endblock %}
+{% endblock %}

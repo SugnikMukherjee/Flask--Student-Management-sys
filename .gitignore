@@ -1,0 +1,12 @@
+/__pycache__/
+
+.vscode
+.env
+.flaskenv
+*.pyc 
+*.pyo
+env/
+venv/
+.venv
+dist/
+.pytest_cache/

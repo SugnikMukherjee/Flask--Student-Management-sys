@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Signin Form</title>
+
+    <link rel="canonical" href="{{url_for('static',filename='pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static',filename='signin.css')}}" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" method="post" action="/">
+        <fieldset>
+      <legend><img class="mb-4" src="{{url_for('static',filename='pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg')}}" alt="Login Portal" width="72" height="72"></legend>
+      <h1 class="h3 mb-3 font-weight-normal"><emp><b>Please sign in</b></emp></h1>
+      <label for="inputusername" class="sr-only"><b>Username</b></label>
+      <input type="text" id="inputusername" class="form-control" placeholder="Enter Username"  name="uname"required autofocus>
+      <label for="inputPassword" class="sr-only"><b>Password</b></label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="pass1" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</a></button>
+      <button class="btn btn-lg btn-secondary btn-block" type="reset">Clear</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2023-2024</p>
+    </fieldset>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+  </body>
+</html>
